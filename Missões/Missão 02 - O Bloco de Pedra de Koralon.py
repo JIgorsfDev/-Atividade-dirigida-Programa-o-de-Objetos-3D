@@ -20,21 +20,21 @@ vertices = [
              ]
 
 faces = [
-    [0, 1, 2, 3],   # frente
-    [4, 5, 6, 7],   # trás
-    [3, 2, 6, 7],   # esquerda
-    [0, 1, 5, 4],   # direita
-    [1, 2, 6, 5],   # topo
-    [0, 3, 7, 4]    # base
+    [0, 1, 2, 3],
+    [4, 5, 6, 7],
+    [3, 2, 6, 7],
+    [0, 1, 5, 4],
+    [1, 2, 6, 5],
+    [0, 3, 7, 4]
                ]
 
-cor = [             #fiz baseado num cubo magico
-    [0, 1, 0],      # verde   -> frente
-    [1, 0.5, 0],    # laranja -> trás
-    [1, 0, 0],      # vermelho -> esquerda
-    [1, 1, 0],      # amarelo  -> direita
-    [1, 1, 1],      # branco -> topo
-    [0, 0, 1]       # azul -> base
+cor = [
+    [0, 1, 0],
+    [1, 0.5, 0],
+    [1, 0, 0],
+    [1, 1, 0],
+    [1, 1, 1],
+    [0, 0, 1]
      ]
 
 def keyboard_gamer (key, x, y):
@@ -67,13 +67,13 @@ def keyboard_common(key, x, y):
      cam_right()
 
 
-def cam_top(): #o topo tá errado
+def cam_top():
    gl.glMatrixMode(gl.GL_PROJECTION)
    gl.glLoadIdentity()
    glu.gluPerspective(32, 1.0, 1.0, 20)
    gl.glMatrixMode(gl.GL_MODELVIEW)
    gl.glLoadIdentity()
-   glu.gluLookAt(0.0, 10.0, 2.0,
+   glu.gluLookAt(0.0, 0.0, 10.0,
                  0.0, 0.0, 0.0,
                  0.0, 1.0, 0.0)
 
@@ -85,7 +85,7 @@ def cam_down():
    glu.gluPerspective(32, 1.0, 1.0, 20)
    gl.glMatrixMode(gl.GL_MODELVIEW)
    gl.glLoadIdentity()
-   glu.gluLookAt(0.0, -10.0, -6,
+   glu.gluLookAt(0.0, 0.0, -10.0,
                  0.0, 0.0, 0.0,
                  0.0, 1.0, 0.0)
 
@@ -154,3 +154,4 @@ glut.glutDisplayFunc(draw)
 glut.glutKeyboardFunc(keyboard_gamer)
 glut.glutSpecialFunc(keyboard_common)
 glut.glutMainLoop()
+
