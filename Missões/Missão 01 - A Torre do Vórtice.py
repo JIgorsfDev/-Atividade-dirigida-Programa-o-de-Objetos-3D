@@ -4,7 +4,6 @@ import OpenGL.GLU as glu
 import math
 import sys
 
-
 def keyboard(key, x, y):
    if key == b's':
       cam_top()
