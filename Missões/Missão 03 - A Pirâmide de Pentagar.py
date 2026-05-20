@@ -2,7 +2,7 @@
 #Sua missão é reconstruir esse objeto sem auxílio das formas automáticas da GLUT, utilizando apenas sua habilidade com vértices, polígonos e a lógica do espaço tridimensional.
 #Modele uma pirâmide com base pentagonal em OpenGL puro (GL_POLYGON para a base e GL_TRIANGLES para as faces). Posicione manualmente os vértices da base e do vértice superior (ápice).
 #Apresente a pirâmide sob três ângulos diferentes, simulando a observação de um arqueólogo em exploração: visão frontal, visão superior e visão lateral. A base pode estar sobre o plano XY, e o ápice se projetando ao longo do eixo Z.
-  
+
 import OpenGL.GL as gl
 import OpenGL.GLUT as  glut
 import OpenGL.GLU as glu
@@ -37,16 +37,14 @@ base = [
   [0.6, 1.0, 0.0],
   [-0.6, 1.0, 0.0],
   [-1.0, -0.3, 0.0]
-
 ]
 
 def keyboard(key, x, y):
    if key == b'1':
        cam_init()
- 
+
    elif key == b'2':
        cam_top()
-
 
    elif key == b'3':
        cam_side()
@@ -57,7 +55,7 @@ def cam_init():
  glu.gluPerspective(32, 1.0, 1.0, 20)
  gl.glMatrixMode(gl.GL_MODELVIEW)
  gl.glLoadIdentity()
- glu.gluLookAt(0.0, -6.0, 2.0,
+ glu.gluLookAt(0.0, -6.0, 0.0,
                0.0, 0.0, 1.0,
                0.0, 0.0, 1.0
                )
@@ -70,17 +68,16 @@ def cam_top():
     glu.gluPerspective(32, 1.0, 1.0, 20)
     gl.glMatrixMode(gl.GL_MODELVIEW)
     gl.glLoadIdentity()
-    glu.gluLookAt(0.0, 0.0, 8.0,
+    glu.gluLookAt(0.0, 0.0, 10.0,
                   0.0, 0.0, 0.0,
-                  0.0, 1.0, 0.0
-                 )
+                  0.0, 1.0, 0.0)
 
     glut.glutPostRedisplay()
 
 def cam_side():
     gl.glMatrixMode(gl.GL_PROJECTION)
     gl.glLoadIdentity()
-    glu.gluPerspective(48, 1, 1, 10)
+    glu.gluPerspective(32, 1.0, 1.0, 20)
     gl.glMatrixMode(gl.GL_MODELVIEW)
     gl.glLoadIdentity()
     glu.gluLookAt(8.0, 0.0, 2.0,
@@ -93,15 +90,17 @@ def cam_side():
 def figure():
    gl.glColor3f(1.0, 1.0, 1.0)
    gl.glBegin(gl.GL_TRIANGLES)
+
    for triangle in triangles:
        gl.glVertex3fv(triangle)
-    
-   gl.glEnd()
 
+   gl.glEnd()
    gl.glColor3f(1.0, 1.0, 1.0)
    gl.glBegin(gl.GL_POLYGON)
+
    for vertex in base:
        gl.glVertex3fv(vertex)
+
    gl.glEnd()
 
 def draw():
