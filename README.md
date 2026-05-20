@@ -11,4 +11,9 @@ Cada missão presente nesta atividade representa não apenas um exercício técn
 
 O mundo 3D aguarda os próximos Guardiões.
 
+### 🤓☝️ Tecnologias utilizadas
+- **Linguagem:** Python
+- **IDE:** Replit
+- **Bibliotecas:** PyOpenGL (`GL`, `GLUT` e `GLU`)
+
 > "Que sua matriz de projeção jamais se perca no seu espaço!" ⚔️💻
