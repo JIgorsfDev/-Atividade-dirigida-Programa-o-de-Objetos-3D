@@ -9,7 +9,6 @@ Por ordem do imperador Néc-io, fui integrado à Ordem dos Guardiões Espaciais,
 
 Cada missão presente nesta atividade representa não apenas um exercício técnico, mas também um desafio de lógica espacial, criatividade computacional e domínio das câmeras e projeções 3D. Durante a jornada, foi necessário reconstruir artefatos antigos, modelar estruturas manualmente e compreender como o observador interage com o espaço tridimensional.
 
-Prepare sua câmera, alinhe sua matriz de projeção e atravesse os limites do plano.
 O mundo 3D aguarda os próximos Guardiões.
 
 > "Que sua matriz de projeção jamais se perca no seu espaço!" ⚔️💻
