@@ -95,11 +95,21 @@ def figure():
        gl.glVertex3fv(triangle)
 
    gl.glEnd()
+
    gl.glColor3f(1.0, 1.0, 1.0)
    gl.glBegin(gl.GL_POLYGON)
 
    for vertex in base:
        gl.glVertex3fv(vertex)
+
+   gl.glEnd()
+
+   gl.glColor3f(0.0, 0.0, 0.0)
+   gl.glBegin(gl.GL_LINES)
+
+   for triangle in triangles:
+       gl.glVertex3fv(apice)
+       gl.glVertex3fv(triangle)
 
    gl.glEnd()
 
